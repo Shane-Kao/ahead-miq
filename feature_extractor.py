@@ -19,12 +19,9 @@ if __name__ == '__main__':
 
     from fcs_reader import FCSReader
     fcs_reader = FCSReader(root_dir='raw_fcs')
-    df = fcs_reader.fit_transform(
-        X=['flowrepo_covid_EU_023_flow_001', 'flowrepo_covid_EU_035_flow_001',
-           'flowrepo_covid_EU_004_flow_001', 'flowrepo_covid_EU_007_flow_001',
-          ])
+    df = fcs_reader.fit_transform(X=['flowrepo_covid_EU_002_flow_001'])
     print(df.shape)
-
+    breakpoint()
     feature_extractor = FeatureExtractor(
         funcs=[
             np.mean, np.std, np.min, np.max, np.median, np.size,
